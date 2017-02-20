@@ -1,17 +1,18 @@
 {
-    "name": "pluf/todo",
-    "description": "Todo package of pluf",
-    "type": "library",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Mostafa Barmshory",
-            "email": "mostafa.barmshory@dpq.co.ir"
-        }
-    ],
-    "minimum-stability": "stable",
-    "require": {
-        "pluf/core": "2.0.*"
-    },
-    "include-path": ["src/"]
+	"name" : "pluf/todo",
+	"description" : "Todo package of pluf",
+	"type" : "library",
+	"license" : "MIT",
+	"authors" : [{
+			"name" : "Mostafa Barmshory",
+			"email" : "mostafa.barmshory@dpq.co.ir"
+		}
+	],
+	"minimum-stability" : "stable",
+	"require" : {
+		"pluf/core" : "^2.0.2"
+	},
+	"include-path" : [
+		"src/"
+	]
 }
