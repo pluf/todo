@@ -26,8 +26,6 @@
 class Todo_List extends Pluf_Model
 {
 
-    public $_model = __CLASS__;
-
     /**
      * The init method is used to define your model.
      * It is very important to call "parent::init()" at the end.
@@ -40,11 +38,6 @@ class Todo_List extends Pluf_Model
          * in the global configuration.
          */
         $this->_a['table'] = 'todo_lists';
-        
-        /**
-         * The name of the model in the class definition.
-         */
-        $this->_a['model'] = 'Todo_List';
         
         /**
          * The definition of the model.
@@ -64,7 +57,7 @@ class Todo_List extends Pluf_Model
                         'blank' => false,
                         'size' => 100,
                         // The verbose name is all lower case
-                        'verbose' => __('name')
+                        'verbose' => 'name'
                 )
         );
         /**

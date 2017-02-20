@@ -24,7 +24,6 @@
 class Todo_Item extends Pluf_Model
 {
 
-    public $_model = __CLASS__;
 
     /**
      * The init method is used to define your model.
@@ -37,11 +36,6 @@ class Todo_Item extends Pluf_Model
          * in the global configuration.
          */
         $this->_a['table'] = 'todo_items';
-        
-        /**
-         * The name of the model in the class definition.
-         */
-        $this->_a['model'] = 'Todo_Item';
         
         /**
          * The definition of the model.
