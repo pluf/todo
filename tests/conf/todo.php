@@ -19,6 +19,14 @@
 
 $cfg = array();
 
+
+$cfg['secret_key'] = '5a8d7e0f2aad8bdab8f6eef725412850';
+
+$cfg['middleware_classes'] = array(
+    'Pluf_Middleware_Session'
+);
+
+
 // Set the debug variable to true to force the recompilation of all
 // the templates each time during development
 $cfg['debug'] = true;
@@ -26,7 +34,7 @@ $cfg['debug'] = true;
 // If your models are using models from applications outside of the
 // base objects of the framework, you need to list them here. 
 // You need to include the name of the current application.
-$cfg['installed_apps'] = array('Pluf', 'Todo');
+$cfg['installed_apps'] = array('Pluf', 'User', 'Todo');
 
 // Base URL of the application. Note that it is not something like
 // 'root_base' not to overwrite the base of another application when
@@ -43,10 +51,12 @@ $cfg['todo_urls'] = dirname(__FILE__).'/urls.php';
 // cached data and other temporary resources.
 // It must be writeable by your webserver instance.
 // It is mandatory if you are using the template system.
-$cfg['tmp_folder'] = '/tmp';
+$cfg['tmp_folder'] = dirname(__FILE__) . '/../tmp';
 
 // The folder in which the templates of the application are located.
-$cfg['template_folders'] = array(dirname(__FILE__).'/../templates');
+$cfg['template_folders'] = array(
+    dirname(__FILE__).'/../templates'
+);
 
 // Default mimetype of the document your application is sending.
 // It can be overwritten for a given response if needed.
@@ -59,17 +69,26 @@ $cfg['template_tags'] = array(
 // Default database configuration. The database defined here will be
 // directly accessible from Pluf::db() of course it is still possible
 // to open any other number of database connections through Pluf_DB
-$cfg['db_login'] = '';
+$cfg['db_login'] = 'root';
 $cfg['db_password'] = '';
-$cfg['db_server'] = '';
-$cfg['db_database'] = $cfg['tmp_folder'].'/todo.db';
+$cfg['db_server'] = 'localhost';
+$cfg['db_database'] = 'test';
 
 // Must be shared by all the installed_apps and the core framework.
 // That way you can have several installations of the core framework.
-$cfg['db_table_prefix'] = 'pluf_testapp_'; 
+$cfg['db_table_prefix'] = 'pluf_testapp_todo_'; 
 
 // Starting version 4.1 of MySQL the utf-8 support is "correct".
 // The reason of the db_version for MySQL is only for that.
-$cfg['db_version'] = '';
-$cfg['db_engine'] = 'SQLite';
+$cfg['db_version'] = '5.5.33';
+$cfg['db_engine'] = 'MySQL';
 return $cfg;
+
+
+
+
+
+
+
+
+
