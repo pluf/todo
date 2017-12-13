@@ -17,177 +17,177 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 return array(
-        // -------------------------------------------------------------
-        // List
-        // -------------------------------------------------------------
-        array(
-                'regex' => '#^/list/find$#',
-                'model' => 'Pluf_Views',
-                'method' => 'findObject',
-                'http-method' => 'GET',
-                'params' => array(
-                        'model' => 'Todo_List',
-                        'listFilters' => array(
-                                'id',
-                                'name'
-                        ),
-                        'listDisplay' => array(
-                                'id' => 'title',
-                                'name' => 'description'
-                        ),
-                        'searchFields' => array(
-                                'name'
-                        ),
-                        'sortFields' => array(
-                                'id',
-                                'name'
-                        )
-                )
-        ),
-        array(
-                'regex' => '#^/list/new$#',
-                'priority' => 4,
-                'model' => 'Pluf_Views',
-                'method' => 'createObject',
-                'http-method' => 'POST',
-                'params' => array(
-                        'model' => 'Todo_List'
-                )
-        ),
-        array(
-                'regex' => '#^/list/(?P<modelId>\d+)$#',
-                'priority' => 4,
-                'model' => 'Pluf_Views',
-                'method' => 'getObject',
-                'http-method' => 'GET',
-                'params' => array(
-                        'model' => 'Todo_List'
-                )
-        ),
-        array(
-                'regex' => '#^/list/(?P<modelId>\d+)$#',
-                'priority' => 4,
-                'model' => 'Pluf_Views',
-                'method' => 'updateObject',
-                'http-method' => 'POST',
-                'params' => array(
-                        'model' => 'Todo_List'
-                )
-        ),
-        array(
-                'regex' => '#^/list/(?P<modelId>\d+)$#',
-                'priority' => 4,
-                'model' => 'Pluf_Views',
-                'method' => 'deleteObject',
-                'http-method' => 'DELETE',
-                'params' => array(
-                        'model' => 'Todo_List'
-                )
-        ),
-        
-        // -------------------------------------------------------------
-        // List item
-        // -------------------------------------------------------------
-        array(
-                'regex' => '#^/list/(?P<listId>\d+)/item/find$#',
-                'priority' => 4,
-                'model' => 'Todo_Views',
-                'method' => 'findItems',
-                'http-method' => 'GET'
-        ),
-        array(
-                'regex' => '#^/list/(?P<listId>\d+)/item/new$#',
-                'priority' => 4,
-                'model' => 'Todo_Views',
-                'method' => 'createItem',
-                'http-method' => 'POST'
-        ),
-        array(
-                'regex' => '#^/list/(?P<listId>\d+)/item/(?P<modelId>\d+)$#',
-                'priority' => 4,
-                'model' => 'Pluf_View',
-                'method' => 'getObject',
-                'http-method' => 'GET',
-                'params' => array(
-                        'model' => 'Todo_Item'
-                )
-        ),
-        array(
-                'regex' => '#^/list/(?P<listId>\d+)/item/(?P<modelId>\d+)$#',
-                'priority' => 4,
-                'model' => 'Pluf_View',
-                'method' => 'updateObject',
-                'http-method' => 'POST',
-                'params' => array(
-                        'model' => 'Todo_Item'
-                )
-        ),
-        array(
-                'regex' => '#^/list/(?P<listId>\d+)/item/(?P<modelId>\d+)$#',
-                'priority' => 4,
-                'model' => 'Pluf_View',
-                'method' => 'deleteObject',
-                'http-method' => 'DELETE',
-                'params' => array(
-                        'model' => 'Todo_Item'
-                )
-        ),
-        
-        // -------------------------------------------------------------
-        // item
-        // -------------------------------------------------------------
-        array(
-                'regex' => '#^/item/find$#',
-                'model' => 'Pluf_Views',
-                'method' => 'findObject',
-                'http-method' => 'GET',
-                'params' => array(
-                        'model' => 'Todo_Item',
-                        'listFilters' => array(
-                                'id',
-                                'name'
-                        ),
-                        'listDisplay' => array(
-                                'id' => 'title',
-                                'name' => 'description'
-                        ),
-                        'searchFields' => array(
-                                'name'
-                        ),
-                        'sortFields' => array(
-                                'id',
-                                'name'
-                        )
-                )
-        ),
-        array(
-                'regex' => '#^/item/(?P<modelId>\d+)$#',
-                'priority' => 4,
-                'model' => 'Pluf_View',
-                'method' => 'getObject',
-                'http-method' => 'GET',
-                'params' => array(
-                        'model' => 'Todo_Item'
-                )
-        ),
-        array(
-                'regex' => '#^/item/(?P<modelId>\d+)$#',
-                'priority' => 4,
-                'model' => 'Pluf_View',
-                'method' => 'updateObject',
-                'http-method' => 'POST',
-                'params' => array(
-                        'model' => 'Todo_Item'
-                )
-        ),
-        array(
-                'regex' => '#^/item/(?P<modelId>\d+)$#',
-                'priority' => 4,
-                'model' => 'Pluf_View',
-                'method' => 'deleteObject',
-                'http-method' => 'DELETE',
-                'params' => array(
-                        'model' => 'Todo_Item'
-                )
-        ),
+    // -------------------------------------------------------------
+    // List
+    // -------------------------------------------------------------
+    array(
+        'regex' => '#^/list/find$#',
+        'model' => 'Pluf_Views',
+        'method' => 'findObject',
+        'http-method' => 'GET',
+        'params' => array(
+            'model' => 'Todo_List',
+            'listFilters' => array(
+                'id',
+                'name'
+            ),
+            'listDisplay' => array(
+                'id' => 'title',
+                'name' => 'description'
+            ),
+            'searchFields' => array(
+                'name'
+            ),
+            'sortFields' => array(
+                'id',
+                'name'
+            )
+        )
+    ),
+    array(
+        'regex' => '#^/list/new$#',
+        'priority' => 4,
+        'model' => 'Pluf_Views',
+        'method' => 'createObject',
+        'http-method' => 'POST',
+        'params' => array(
+            'model' => 'Todo_List'
+        )
+    ),
+    array(
+        'regex' => '#^/list/(?P<modelId>\d+)$#',
+        'priority' => 4,
+        'model' => 'Pluf_Views',
+        'method' => 'getObject',
+        'http-method' => 'GET',
+        'params' => array(
+            'model' => 'Todo_List'
+        )
+    ),
+    array(
+        'regex' => '#^/list/(?P<modelId>\d+)$#',
+        'priority' => 4,
+        'model' => 'Pluf_Views',
+        'method' => 'updateObject',
+        'http-method' => 'POST',
+        'params' => array(
+            'model' => 'Todo_List'
+        )
+    ),
+    array(
+        'regex' => '#^/list/(?P<modelId>\d+)$#',
+        'priority' => 4,
+        'model' => 'Pluf_Views',
+        'method' => 'deleteObject',
+        'http-method' => 'DELETE',
+        'params' => array(
+            'model' => 'Todo_List'
+        )
+    ),
+    
+    // -------------------------------------------------------------
+    // List item
+    // -------------------------------------------------------------
+    array(
+        'regex' => '#^/list/(?P<listId>\d+)/item/find$#',
+        'priority' => 4,
+        'model' => 'Todo_Views',
+        'method' => 'findItems',
+        'http-method' => 'GET'
+    ),
+    array(
+        'regex' => '#^/list/(?P<listId>\d+)/item/new$#',
+        'priority' => 4,
+        'model' => 'Todo_Views',
+        'method' => 'createItem',
+        'http-method' => 'POST'
+    ),
+    array(
+        'regex' => '#^/list/(?P<listId>\d+)/item/(?P<modelId>\d+)$#',
+        'priority' => 4,
+        'model' => 'Pluf_View',
+        'method' => 'getObject',
+        'http-method' => 'GET',
+        'params' => array(
+            'model' => 'Todo_Item'
+        )
+    ),
+    array(
+        'regex' => '#^/list/(?P<listId>\d+)/item/(?P<modelId>\d+)$#',
+        'priority' => 4,
+        'model' => 'Pluf_View',
+        'method' => 'updateObject',
+        'http-method' => 'POST',
+        'params' => array(
+            'model' => 'Todo_Item'
+        )
+    ),
+    array(
+        'regex' => '#^/list/(?P<listId>\d+)/item/(?P<modelId>\d+)$#',
+        'priority' => 4,
+        'model' => 'Pluf_View',
+        'method' => 'deleteObject',
+        'http-method' => 'DELETE',
+        'params' => array(
+            'model' => 'Todo_Item'
+        )
+    ),
+    
+    // -------------------------------------------------------------
+    // item
+    // -------------------------------------------------------------
+    array(
+        'regex' => '#^/item/find$#',
+        'model' => 'Pluf_Views',
+        'method' => 'findObject',
+        'http-method' => 'GET',
+        'params' => array(
+            'model' => 'Todo_Item',
+            'listFilters' => array(
+                'id',
+                'name'
+            ),
+            'listDisplay' => array(
+                'id' => 'title',
+                'name' => 'description'
+            ),
+            'searchFields' => array(
+                'name'
+            ),
+            'sortFields' => array(
+                'id',
+                'name'
+            )
+        )
+    ),
+    array(
+        'regex' => '#^/item/(?P<modelId>\d+)$#',
+        'priority' => 4,
+        'model' => 'Pluf_View',
+        'method' => 'getObject',
+        'http-method' => 'GET',
+        'params' => array(
+            'model' => 'Todo_Item'
+        )
+    ),
+    array(
+        'regex' => '#^/item/(?P<modelId>\d+)$#',
+        'priority' => 4,
+        'model' => 'Pluf_View',
+        'method' => 'updateObject',
+        'http-method' => 'POST',
+        'params' => array(
+            'model' => 'Todo_Item'
+        )
+    ),
+    array(
+        'regex' => '#^/item/(?P<modelId>\d+)$#',
+        'priority' => 4,
+        'model' => 'Pluf_View',
+        'method' => 'deleteObject',
+        'http-method' => 'DELETE',
+        'params' => array(
+            'model' => 'Todo_Item'
+        )
+    )
 );

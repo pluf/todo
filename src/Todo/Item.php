@@ -24,11 +24,10 @@
 class Todo_Item extends Pluf_Model
 {
 
-
     /**
      * The init method is used to define your model.
      */
-    function init ()
+    function init()
     {
         /**
          * The database table to store the model.
@@ -44,32 +43,32 @@ class Todo_Item extends Pluf_Model
          * given in the corresponding array.
          */
         $this->_a['cols'] = array(
-                // It is mandatory to have an "id" column.
-                'id' => array(
-                        'type' => 'Pluf_DB_Field_Sequence',
-                        // It is automatically added.
-                        'blank' => true
-                ),
-                'item' => array(
-                        'type' => 'Pluf_DB_Field_Varchar',
-                        'blank' => false,
-                        'size' => 250,
-                        // The verbose name is all lower case
-                        'verbose' => __('todo item')
-                ),
-                'completed' => array(
-                        'type' => 'Pluf_DB_Field_Boolean',
-                        'default' => false,
-                        'verbose' => __('completed')
-                ),
-                'list' => array(
-                        // Here we relate the model to a Todolist
-                        // model. This is like saying that a Todoitem
-                        // belongs to a given Todolist
-                        'type' => 'Pluf_DB_Field_Foreignkey',
-                        'blank' => false,
-                        'model' => 'Todo_List'
-                )
+            // It is mandatory to have an "id" column.
+            'id' => array(
+                'type' => 'Pluf_DB_Field_Sequence',
+                // It is automatically added.
+                'blank' => true
+            ),
+            'item' => array(
+                'type' => 'Pluf_DB_Field_Varchar',
+                'blank' => false,
+                'size' => 250,
+                // The verbose name is all lower case
+                'verbose' => __('todo item')
+            ),
+            'completed' => array(
+                'type' => 'Pluf_DB_Field_Boolean',
+                'default' => false,
+                'verbose' => __('completed')
+            ),
+            'list' => array(
+                // Here we relate the model to a Todolist
+                // model. This is like saying that a Todoitem
+                // belongs to a given Todolist
+                'type' => 'Pluf_DB_Field_Foreignkey',
+                'blank' => false,
+                'model' => 'Todo_List'
+            )
         );
         /**
          * You can define the indexes.
@@ -78,19 +77,24 @@ class Todo_Item extends Pluf_Model
          * of completed or not completed elements.
          */
         $this->_a['idx'] = array(
-                'completed_idx' => array(
-                        'col' => 'completed',
-                        'type' => 'normal'
-                )
+            'completed_idx' => array(
+                'col' => 'completed',
+                'type' => 'normal'
+            )
         );
         $this->_a['views'] = array(
-                'todo' => array(
-                        'where' => 'completed=false'
-                )
+            'todo' => array(
+                'where' => 'completed=false'
+            )
         );
     }
 
-    public function __toString ()
+    /**
+     *
+     * {@inheritdoc}
+     * @see Pluf_Model::__toString()
+     */
+    public function __toString()
     {
         return $this->item . (($this->completed) ? ' - Done' : '');
     }
