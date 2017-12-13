@@ -50,15 +50,21 @@ class Todo_AppTest extends TestCase
     }
 
     /**
+     * Init test data
+     * 
      * @beforeClass
      */
     public static function createDataBase()
     {
-        Pluf::start(__DIR__.'/../conf/todo.php');
+        // Load applicaton
+        Pluf::start(__DIR__.'/../conf/todo.cnf.php');
+        self::$client = new Test_Client(__DIR__.'/../conf/todo.urls.php');
         
+        // Install application
         $m = new Pluf_Migration(Pluf::f('installed_apps'));
         $m->install();
-        // Test user
+        
+        // Create Test user
         self::$user = new Pluf_User();
         self::$user->login = 'test';
         self::$user->first_name = 'test';
@@ -68,26 +74,14 @@ class Todo_AppTest extends TestCase
         self::$user->active = true;
         self::$user->administrator = true;
         if (true !== self::$user->create()) {
-            throw new Exception();
+            throw new Pluf_Exception('Unable to create the test user?!');
         }
         
-        self::$client = new Test_Client(array(
-            array(
-                'app' => 'User',
-                'regex' => '#^/api/user#',
-                'base' => '',
-                'sub' => include 'User/urls.php'
-            ),
-            array(
-                'app' => 'Todo',
-                'regex' => '#^#',
-                'base' => '',
-                'sub' => include 'Todo/urls.php'
-            )
-        ));
     }
 
     /**
+     * Remore all test data
+     * 
      * @afterClass
      */
     public static function removeDatabses()
@@ -97,6 +91,8 @@ class Todo_AppTest extends TestCase
     }
 
     /**
+     * Create a todo list model
+     * 
      * @test
      */
     public function testCreateList()
@@ -112,6 +108,8 @@ class Todo_AppTest extends TestCase
     }
     
     /**
+     * Create Imte for a list
+     * 
      * @test
      */
     public function testCreateItem()
