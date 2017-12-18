@@ -65,7 +65,7 @@ class Todo_AppTest extends TestCase
         $m->install();
         
         // Create Test user
-        self::$user = new Pluf_User();
+        self::$user = new User();
         self::$user->login = 'test';
         self::$user->first_name = 'test';
         self::$user->last_name = 'test';
