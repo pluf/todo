@@ -30,7 +30,7 @@ class Todo_List extends Pluf_Model
      * The init method is used to define your model.
      * It is very important to call "parent::init()" at the end.
      */
-    function init ()
+    function init()
     {
         /**
          * The database table to store the model.
@@ -46,19 +46,19 @@ class Todo_List extends Pluf_Model
          * given in the corresponding array.
          */
         $this->_a['cols'] = array(
-                // It is mandatory to have an "id" column.
-                'id' => array(
-                        'type' => 'Pluf_DB_Field_Sequence',
-                        // It is automatically added.
-                        'blank' => true
-                ),
-                'name' => array(
-                        'type' => 'Pluf_DB_Field_Varchar',
-                        'blank' => false,
-                        'size' => 100,
-                        // The verbose name is all lower case
-                        'verbose' => 'name'
-                )
+            // It is mandatory to have an "id" column.
+            'id' => array(
+                'type' => 'Pluf_DB_Field_Sequence',
+                // It is automatically added.
+                'blank' => true
+            ),
+            'name' => array(
+                'type' => 'Pluf_DB_Field_Varchar',
+                'blank' => false,
+                'size' => 100,
+                // The verbose name is all lower case
+                'verbose' => 'name'
+            )
         );
         /**
          * You can define the indexes.
@@ -73,7 +73,7 @@ class Todo_List extends Pluf_Model
     /**
      * To nicely render the list in the option boxes.
      */
-    function __toString ()
+    function __toString()
     {
         return $this->name;
     }

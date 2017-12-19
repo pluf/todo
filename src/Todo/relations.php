@@ -25,8 +25,8 @@
  */
 $m = array();
 $m['Todo_Item'] = array(
-        'relate_to' => array(
-                'Todo_List'
-        )
+    'relate_to' => array(
+        'Todo_List'
+    )
 );
 return $m;
