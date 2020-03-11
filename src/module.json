@@ -1,7 +1,7 @@
 {
 	"model": [
-		"Todo_Item",
-		"Todo_List"
+		"\\Pluf\\Todo\\Item",
+		"\\Pluf\\Todo\\Group"
 	],
 	"permisson": [],
 	"monitor":[]

@@ -1,7 +1,7 @@
 <?php
 /*
  * This file is part of Pluf Framework, a simple PHP Application Framework.
- * Copyright (C) 2010-2020 Phoinex Scholars Co. (http://dpq.co.ir)
+ * Copyright (C) 2010-2020 Phoinex Scholars Co. http://dpq.co.ir
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,17 +16,25 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
+namespace Pluf\Todo;
 
-/**
- * For each model having a 'foreignkey' or a 'manytomany' colum, details
- * must be added here.
- * These details are used to generated the methods
- * to retrieve related models from each model.
- */
-$m = array();
-$m['Todo_Item'] = array(
-    'relate_to' => array(
-        'Todo_List'
-    )
-);
-return $m;
+use Pluf;
+
+class Module extends \Pluf\Module
+{
+
+    const moduleJsonPath = __DIR__ . '/module.json';
+
+    const relations = array(
+        '\Pluf\Todo\Item' => array(
+            'relate_to_many' => array(),
+            'relate_to' => array(
+                '\Pluf\Todo\Group'
+            )
+        )
+    );
+
+    public function init(Pluf $bootstrap): void
+    {}
+}
+

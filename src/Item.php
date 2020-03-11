@@ -1,5 +1,4 @@
 <?php
-
 /*
  * This file is part of Pluf Framework, a simple PHP Application Framework.
  * Copyright (C) 2010-2020 Phoinex Scholars Co. (http://dpq.co.ir)
@@ -17,11 +16,14 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
+namespace Pluf\Todo;
+
+use Pluf_Model;
 
 /**
  * The Todo_Item is refering to the Todo_List through a foreign key.
  */
-class Todo_Item extends Pluf_Model
+class Item extends Pluf_Model
 {
 
     /**
@@ -35,7 +37,7 @@ class Todo_Item extends Pluf_Model
          * in the global configuration.
          */
         $this->_a['table'] = 'todo_items';
-        
+
         /**
          * The definition of the model.
          * Each key of the associative array
@@ -54,12 +56,12 @@ class Todo_Item extends Pluf_Model
                 'blank' => false,
                 'size' => 250,
                 // The verbose name is all lower case
-                'verbose' => __('todo item')
+                'verbose' => 'todo item'
             ),
             'completed' => array(
                 'type' => 'Pluf_DB_Field_Boolean',
                 'default' => false,
-                'verbose' => __('completed')
+                'verbose' => 'completed'
             ),
             'list' => array(
                 // Here we relate the model to a Todolist
@@ -67,7 +69,8 @@ class Todo_Item extends Pluf_Model
                 // belongs to a given Todolist
                 'type' => 'Pluf_DB_Field_Foreignkey',
                 'blank' => false,
-                'model' => 'Todo_List'
+                'model' => '\Pluf\Todo\Group',
+                'relate_name' => 'todo_item'
             )
         );
         /**

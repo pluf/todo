@@ -1,32 +1,30 @@
 {
 	"name" : "pluf/todo",
+	"version" : "6.0.5",
 	"description" : "Todo package of pluf",
+	"homepage" : "https://github.com/pluf/todo",
 	"type" : "library",
 	"license" : "MIT",
 	"authors" : [{
 			"name" : "Mostafa Barmshory",
 			"email" : "mostafa.barmshory@dpq.co.ir",
-			"homepage" : "http://dpq.co.ir",
+			"homepage" : "http://pluf.ir",
 			"role" : "developer"
 		}, {
 			"name" : "Mohammad Hadi Mansouri",
 			"email" : "mohammad.hadi.mansouri@dpq.co.ir",
-			"homepage" : "http://dpq.co.ir",
+			"homepage" : "http://pluf.ir",
 			"role" : "developer"
 		}
 	],
 	"minimum-stability" : "stable",
 	"require" : {
-		"pluf/core" : "^5.9"
+		"pluf/core" : "6.x"
 	},
 	"require-dev" : {
-		"pluf/test" : "^5.9",
-		"pluf/user" : "^5.9"
+		"pluf/test" : "6.x",
+		"pluf/user" : "6.x"
 	},
-	"include-path" : [
-		"src/"
-	],
-	"homepage" : "https://github.com/pluf/todo",
 	"support" : {
 		"issues" : "https://github.com/pluf/todo/issues",
 		"wiki" : "https://github.com/pluf/todo/wiki",
@@ -34,5 +32,45 @@
 	},
 	"keywords" : [
 		"todo"
-	]
+	],
+	"repositories" : [{
+			"type" : "path",
+			"url" : "../core",
+			"name" : "pluf/core",
+			"options" : {
+				"symlink" : true
+			}
+		}, {
+			"type" : "path",
+			"url" : "../test",
+			"name" : "pluf/test",
+			"options" : {
+				"symlink" : true
+			}
+		}, {
+			"type" : "path",
+			"url" : "../http2",
+			"name" : "pluf/http2",
+			"options" : {
+				"symlink" : true
+			}
+		}, {
+			"type" : "path",
+			"url" : "../user",
+			"name" : "pluf/user",
+			"options" : {
+				"symlink" : true
+			}
+		}
+	],
+	"autoload" : {
+		"psr-4" : {
+			"Pluf\\Todo\\" : "src"
+		}
+	},
+	"autoload-dev" : {
+		"psr-4" : {
+			"Pluf\\Test\\" : "tests"
+		}
+	}
 }

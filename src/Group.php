@@ -1,5 +1,4 @@
 <?php
-
 /*
  * This file is part of Pluf Framework, a simple PHP Application Framework.
  * Copyright (C) 2010-2020 Phoinex Scholars Co. (http://dpq.co.ir)
@@ -17,13 +16,16 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
+namespace Pluf\Todo;
+
+use Pluf_Model;
 
 /**
  * The List model.
  *
  * A Todo_List is storing a list of Todo_Item(s)
  */
-class Todo_List extends Pluf_Model
+class Group extends Pluf_Model
 {
 
     /**
@@ -38,7 +40,7 @@ class Todo_List extends Pluf_Model
          * in the global configuration.
          */
         $this->_a['table'] = 'todo_lists';
-        
+
         /**
          * The definition of the model.
          * Each key of the associative array

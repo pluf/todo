@@ -16,6 +16,11 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
+namespace Pluf\Todo;
+
+use Pluf\Exception;
+use Pluf;
+use Pluf_HTTP_Request;
 
 // We directly load the functions we are often going to use in the
 // views. This makes the code cleaner.
@@ -27,7 +32,7 @@ Pluf::loadFunction('Pluf_Shortcuts_GetFormForModel');
 /**
  * The views of the Todo application.
  */
-class Todo_Views
+class Views
 {
 
     /**
@@ -36,11 +41,10 @@ class Todo_Views
      *            Pluf_HTTP_Request Request object
      * @param
      *            array Matches against the regex of the dispatcher
-     * @return Pluf_HTTP_Response or can throw Exception
      */
-    public function createItem ($request, $match)
+    public function createItem(Pluf_HTTP_Request $request, array $match = [])
     {
-        throw new Pluf_Exception('Not implemented.');
+        throw new Exception('Not implemented.');
     }
 
     /**
@@ -49,10 +53,9 @@ class Todo_Views
      *            Pluf_HTTP_Request Request object
      * @param
      *            array Matches against the regex of the dispatcher
-     * @return Pluf_HTTP_Response or can throw Exception
      */
-    public function findItems ($request, $match)
+    public function findItems(Pluf_HTTP_Request $request, array $match = [])
     {
-        throw new Pluf_Exception('Not implemented.');
+        throw new Exception('Not implemented.');
     }
 }
